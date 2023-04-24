@@ -34,7 +34,7 @@ console.log("Tipo de dato myVarNull: ", typeof(myVarNull));
 
 
 
-const misDatos = {
+const misDatosDePerfil = {
     nombre: "Goyo",
     apellido: "Espinoza",
     edad: 24,
@@ -42,12 +42,62 @@ const misDatos = {
     musicaPorGenero: {
         corridosTumbados: "Ella Baila Sola",
         rock: "I was made for loving you"
+    },
+    nombreComplteto: function fullName(){
+        return misDatosDePerfil.nombre + "" + misDatosDePerfil.apellido + ", soy el belicón"
     }
 }
 
-console.log("Datos completos: ", misDatos);
-console.log("Nombre: ", misDatos.nombre);
-console.log("Los tumbados: ", misDatos.musicaPorGenero.corridosTumbados);
+console.log("Datos completos: ", misDatosDePerfil);
+console.log("Nombre: ", misDatosDePerfil.nombre);
+console.log("Los tumbados: ", misDatosDePerfil.musicaPorGenero.corridosTumbados);
 
+
+const cancionesPP = [
+    "Soy el Belicon",
+    "El Azul",
+    "EL Tsurito",
+    "AMG",
+    {
+        2020:5,
+        2021: 30,
+        2022: 56,
+        total:91
+    }
+]
+
+console.log("Cancion con color: ", cancionesPP[1])
+console.log("Canciones hechas en el ano 2021: ", cancionesPP[4].total)
+console.log("Canciones hechas en el ano 2021: ", cancionesPP[4]["total"])
+console.log("Canciones hechas en el ano 2021: ", cancionesPP[4][2021])
+console.log("Canciones hechas en el ano 2021: ", cancionesPP[4]["2021"])
+
+console.log("Num total elemantos: ", cancionesPP.length);
+console.log("Contiene la cancion AMG: ", cancionesPP.indexOf("AMG")>-1);
+
+
+const myNumber = 420;
+console.log("Num. de minutos en la sesion: "+ myNumber);
+const myNumberTxt = String(myNumber);
+console.log("Num. de minutos en la sesion: "+ myNumberTxt);
+
+
+const myString = "420";
+const sumatoria = 80 + Number(myString);
+console.log("Valor de sumatoria: ", sumatoria);
+
+const myStringInteger = "420.5552";
+const sumatoriaEntera = 80 + parseInt(myStringInteger);
+console.log("Valor de la sumatoria entera: ", sumatoriaEntera);
+
+
+//NOTA, todo string que tenga al menos un caracter, al se evaluado como booleano da true
+//tambien un Boolean(" ") con un caracter es true
+const isBelicoso = "true";
+
+if (isBelicoso)
+    console.log("Denle su belikin");
+else 
+    console.log("Abra paso a la barredora");
 
 
