@@ -265,11 +265,24 @@ const cursosV3Comun = cursosEnComunV2( cursosV2Comun, student3Courses );
 console.log("Comon Courses V3: ", cursosV3Comun.join(", "));
 
 
+/*-------------------------Contar la cantidad de caracteres de una frase
+pepe pecas pica papas con un pico y una pala
+cuenta la cantidad de letras p (8)
+*/
+const frase = "pepe pecas pica papas con un pico y una pala";
 
+/*let cuenta = 0;
+console.log("Cantidad de letras p: ", (frase => {
+  if (frase.filter( letra.includes('p')))
+    cuenta ++;
+  return cuenta;
+}));*/
 
+const cuenta = (frase) => frase.split("").filter(caracter => caracter ==="p").length;
+console.log("Cantidad de letras p: ", cuenta(frase));
 
-
-
+// se autoinvoca mas no es recomendado
+console.log("Cantidad de letras p: ", ((frase) => frase.split("").filter(caracter => caracter ==="p").length)(frase));
 
 
 
