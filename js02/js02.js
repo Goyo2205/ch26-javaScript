@@ -192,8 +192,86 @@ function getNameAndPrint(funcionImprimir){
   funcionImprimir(text);
 }
 
-getNameAndPrint(printToConsole);
-getNameAndPrint(showAlert);
-getNameAndPrint(addH1);
+//getNameAndPrint(printToConsole);
+//getNameAndPrint(showAlert);
+//getNameAndPrint(addH1);
+
+
+function double(arr){
+  const doubleNumbers = [];
+  for (let index = 0; index < arr.length; index++) {
+    const duplicate = arr[index]*2;
+    doubleNumbers.push(duplicate); 
+  }
+  return doubleNumbers;
+};
+
+/*          con funcion flecha
+const duplicate = (number) => number*2;
+function doubleWithMap(array){
+  const duplicateNumber = array.map(duplicate);
+  return duplicateNumber;
+};*/
+
+/*
+function doubleWithMap(array){
+  const duplicateNumber = array.map(function(number){
+    return number*2;
+  });
+  return duplicateNumber;
+};*/
+
+// mas corto
+function doubleWithMap(array){
+  return array.map(number => number*2);
+}
+
+const numbers = [5,10,15,20,25];
+//console.log(double(numbers));
+console.log(doubleWithMap(numbers));
+
+
+/*    Ejercicio 4
+
+*/
+
+const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
+const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+const student3Courses = ["Music"];
+
+function cursosEnComun (student1Courses,student2Courses) {
+  let cursosEnComun = [];
+  for (let i=0; i < student1Courses.length; i++) {
+   for (let j=0; j < student2Courses.length; j++) {
+      if (student1Courses[i] == student2Courses[j]){
+      cursosEnComun.push(student1Courses[i]);
+      }
+    }
+  } 
+  console.log ("Cursos en común :" + cursosEnComun);
+}
+//cursosEnComun( student1Courses, student2Courses );
+
+
+
+// usar filter y usar includes
+function cursosEnComunV2(student1Courses, student2Courses){
+  return  student1Courses.filter(curso => student2Courses.includes(curso));
+}
+
+const cursosV2Comun = cursosEnComunV2( student1Courses, student2Courses );
+console.log("Comon Courses: ", cursosV2Comun.join(", "));
+const cursosV3Comun = cursosEnComunV2( cursosV2Comun, student3Courses );
+console.log("Comon Courses V3: ", cursosV3Comun.join(", "));
+
+
+
+
+
+
+
+
+
+
 
 
