@@ -285,6 +285,56 @@ console.log("Cantidad de letras p: ", cuenta(frase));
 console.log("Cantidad de letras p: ", ((frase) => frase.split("").filter(caracter => caracter ==="p").length)(frase));
 
 
+/* ------------------------funciones Recursivas
+Es una tecnica de programacion en la que la funcion se llama a si misma
+se debe tener precaucion para evitar entrar a un ciclo infinito
+*/
+/*
+  function funcionRecursiva(valor){
+    if (condicion de paro){
+
+    }
+    else{
+      llamada recursiva
+    }
+  }
+*/
+
+const factorialConCicloFor = (numero) => {
+  let total = 1;
+  for (let index = numero; index > 0; index--) {
+    total *= index
+  }
+  return total;
+};
+
+console.log("Factorial de 5: "+ factorialConCicloFor(5))
 
 
+function factorialRecursiva(numero){
+  if(numero == 1){
+    return 1;
+  }
+  else{
+    return numero * factorialRecursiva(numero-1);
+  }
+  
+}
+
+console.log("Factorial de 5: "+ factorialRecursiva(5))
+
+
+
+
+function saludo(cantidad){
+  if(cantidad == 0){
+    return;
+  }
+  else{
+    saludo(cantidad-1);
+  }
+  console.log(`Saludo ${cantidad}`);
+}
+
+saludo(10);
 
